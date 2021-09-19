@@ -48,7 +48,7 @@ void WindowPainter::drawFunctionKeys(Canvas &canvas, const char *names[], const 
 
     for (int i = 0; i < FunctionKeyCount; ++i) {
         if (names[i]) {
-            bool pressed = keyState[Key::F0 + i];
+            bool pressed = keyState[MatrixMap::fromFunction(i)];
 
             if (highlight >= 0) {
                 pressed = i == highlight;

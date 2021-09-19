@@ -164,7 +164,7 @@ void GeneratorPage::encoder(EncoderEvent &event) {
     bool changed = false;
 
     for (int i = 0; i < _generator->paramCount(); ++i) {
-        if (pageKeyState()[Key::F0 + i]) {
+        if (pageKeyState()[MatrixMap::fromFunction(i)]) { //[Key::F0 + i]
             _generator->editParam(i, event.value(), event.pressed());
             changed = true;
         }
